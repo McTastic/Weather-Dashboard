@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <title>Weather Dashboard</title>
 </head>
 <body>
-    
+    <header>Weather Dashbaord</header>
+<main>
+<div class ="form-wrapper">
+    <h2>Search for weather forecast</h2>
+<form>
+    <div class="form-group col-md-2">
+        <label for="formGroupExampleInput"></label>
+         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter city or zip">
+        </div>
+        <div class= "searchBtn col text-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</div>
+<section class="cityInfo">City</section>
+<section class = "forecast-div">5-day forecast</section>
+</main>
 </body>
 </html>
