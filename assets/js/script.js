@@ -38,6 +38,10 @@ fetch(queryURL).then(function (response) {
         console.log(data);
       });
     } else {
+        cityName.text("");
+        cityTemp.text("");
+        cityWind.text("");
+        cityDescription.text("");
         alert('Error: ' + response.statusText);
       }
     })
@@ -45,14 +49,3 @@ fetch(queryURL).then(function (response) {
         alert('Unable to connect to OpenWeather');
       });
   };
-
-//   var getCityIcon = function(){
-//     var queryURL = "http://openweathermap.org/img/wn/"+ cityIconCode + "@2x.png";
-//     fetch(queryURL).then(function (response) {
-//         if (response.ok) {
-//           response.json().then(function (data) {
-//              var cityIconVal = data["weather"][0]["icon"];
-
-//   }
-
-// var cityIconVal = "http://openweathermap.org/img/wn/"+data.weather[0].icon + ".png";

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=0"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css"/>
     <title>Weather Dashboard</title>
@@ -23,7 +23,7 @@
     </div>
 </form>
 </div>
-<section class="cityInfo">City
+<section class="cityInfo">
     <div class = "cityName"></div>
     <div class = "cityTemp"></div>
     <div class = "cityWind"></div>
@@ -31,7 +31,13 @@
     <div class = "cityDescription"></div>
 </section>
 
-<section class = "forecast-div">5-day forecast</section>
+<section class = "forecast-div">5-day forecast
+    <div class ="5dayCard" id = "day1"></div>
+    <div class ="5dayCard" id = "day2"></div>
+    <div class ="5dayCard" id = "day3"></div>
+    <div class ="5dayCard" id = "day4"></div>
+    <div class ="5dayCard" id = "day5"></div>
+</section>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -20,7 +20,12 @@
 
 html{
     max-width: 100vw;
-    max-height: 100vh;
+
+}
+body{
+    height: 75rem;
+    background-color: #7a7adb;
+    background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);  
 }
 header {
   font-size: 2rem;
@@ -50,13 +55,11 @@ header::before {
 
 main {
    padding: calc(var(--heading-height) + 1.5vw) 4em 0;
-   height: 111vh;
+   min-height: 111vh;
    display: flex;
    flex-wrap: wrap;
    justify-content: flex-end; 
    max-width: 100%;
-   background-color: #7a7adb;
-   background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);  
 }
 
 section{
@@ -69,7 +72,6 @@ section{
 }
 
 .form-wrapper{
-    /* border: solid red; */
     position: absolute;
     top: 13rem;
     left: 1rem;
@@ -82,8 +84,8 @@ section{
 .form-wrapper h2{
     text-align: center;
     color: rgb(252, 252, 252);
-    background-color: #e84393;
-    background-image: linear-gradient(315deg, #e84393 0%, #000000 74%);
+    background-color: #61045F;
+    background-image: linear-gradient(180deg, #61045F  0%, #AA076B  51%,  #61045F 100%);
 }
 
 .form-control{
@@ -97,12 +99,14 @@ section{
 
 .cityName{
     font-size: 3rem;
-    /* border: solid green; */
 }
 .cityTemp{
     font-size: 2rem;
 }
 .cityWind{
+    font-size: 2rem;
+}
+.cityDescription{
     font-size: 2rem;
 }
 @media screen and (max-width: 1900px) {
@@ -111,6 +115,16 @@ section{
     }
 }
 @media screen and (max-width: 1168px) {
+    main{
+        background: cover;
+        width: 100vw;
+    }
+
+    section{
+       position: relative;
+       width: 100%;
+       top: 17rem;
+    }
     .form-wrapper{
         left: 1rem;
         align-items: center;
@@ -122,4 +136,5 @@ section{
     .searchBtn{
         justify-content: center;
     }
+    
 }
