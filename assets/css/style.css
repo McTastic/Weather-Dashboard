@@ -136,5 +136,10 @@ section{
     .searchBtn{
         justify-content: center;
     }
+    .cityTemp,
+    .cityWind,
+    .cityDescription{
+        font-size: 1rem;
+    }
     
 }
