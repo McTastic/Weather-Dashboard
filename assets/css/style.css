@@ -25,7 +25,7 @@ html{
 body{
     height: 75rem;
     background-color: #7a7adb;
-    background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);  
+    background: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);  
 }
 header {
   font-size: 2rem;
@@ -66,7 +66,7 @@ section{
     color: white;
     padding: 1rem;
     margin: 1rem;
-    width: 70%;
+    width: 75%;
     border: solid purple;
     box-shadow: 10px 10px 5px rgb(84, 14, 84)
 }
@@ -109,12 +109,35 @@ section{
 .cityDescription{
     font-size: 2rem;
 }
+.forecast-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.forecast-div h1{
+    text-align: left;
+    height: 3rem;
+    width: 100%;
+    /* border: solid red; */
+}
+.forecastCard{
+    border: solid green;
+    height: 22rem;
+    width: 14em;
+    margin: 1rem;
+}
 @media screen and (max-width: 1900px) {
+    body{
+        background:#170e13;
+    }
     .form-control{
         width: 20vw;
     }
 }
 @media screen and (max-width: 1168px) {
+    body{
+        background:#170e13;
+    }
     main{
         background: cover;
         width: 100vw;
