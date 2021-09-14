@@ -23,9 +23,9 @@ html{
 
 }
 body{
-    height: 75rem;
     background-color: #7a7adb;
-    background: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);  
+    background: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
+    background-size: contain;
 }
 header {
   font-size: 2rem;
@@ -113,6 +113,7 @@ section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 .forecast-div h1{
     text-align: left;
@@ -124,12 +125,19 @@ section{
     border: solid green;
     height: 22rem;
     width: 14em;
-    margin: 1rem;
+    font-size: 1rem;
+    margin: 0 .5rem 0 .5rem;
+}
+.cityUVIndex{
+    width: 5%;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 1.25rem;
+ 
 }
 @media screen and (max-width: 1900px) {
-    body{
-        background:#170e13;
-    }
+
     .form-control{
         width: 20vw;
     }
@@ -163,6 +171,13 @@ section{
     .cityWind,
     .cityDescription{
         font-size: 1rem;
+    }
+    .forecast-div h1{
+        font-size: 1.5rem;
+    }
+    .forecastCard{
+        width: 100%;
+        margin: 1rem;
     }
     
 }
