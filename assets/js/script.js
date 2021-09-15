@@ -60,7 +60,6 @@ function saveCity(){
 }
 
 function init() {
-
   var currentCount = localStorage.getItem("count")
 //   renders saved cities to page on load 
   for (var i=0; i < currentCount; i++){
