@@ -60,8 +60,7 @@ function saveCity(){
 }
 
 function init() {
-  forecastHeader.css("display", "none");
-  console.log(savedCityCount)
+
   var currentCount = localStorage.getItem("count")
 //   renders saved cities to page on load 
   for (var i=0; i < currentCount; i++){
