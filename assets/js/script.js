@@ -3,6 +3,7 @@ var city;
 var lat;
 var lon;
 var cityList = $(".cityList");
+var cityInfo = $(".cityInfo");
 var cityName = $(".cityName");
 var cityTemp = $(".cityTemp");
 var cityWind = $(".cityWind");
@@ -19,6 +20,7 @@ var Day3 = $("#day3");
 var Day4 = $("#day4");
 var Day5 = $("#day5");
 submitBtn = $(".btn");
+var savedCityCount = 0
 
 submitBtn.on("click", function () {
   event.preventDefault();
@@ -34,11 +36,13 @@ submitBtn.on("click", function () {
     cityIcon.empty("img");
     forecastCard.empty();
     UVIText.empty();
+    savedCityCount++
+    localStorage.setItem("count",savedCityCount);
   } else {
     alert("Please enter a city");
   }
 });
-
+// listener for saved city buttons
 $("body").on("click","#cityBtn", function(){ 
     event.preventDefault();
     city = this.textContent;
@@ -48,17 +52,25 @@ $("body").on("click","#cityBtn", function(){
     forecastCard.empty();
     UVIText.empty();
 });
-
+// function to save cities as buttons below the search box
 function saveCity(){
-    localStorage.setItem("Saved City", city);
-    var getCity = localStorage.getItem("Saved City");
-    cityList.append("<li><button id='cityBtn'>"+getCity+"</bu</li>");
+    localStorage.setItem(savedCityCount, city);
+    var getCity = localStorage.getItem(savedCityCount);
+    cityList.append("<li><button id='cityBtn'>"+getCity+"</button></li>");
 }
 
 function init() {
   forecastHeader.css("display", "none");
+  console.log(savedCityCount)
+  var currentCount = localStorage.getItem("count")
+//   renders saved cities to page on load 
+  for (var i=0; i < currentCount; i++){
+      var index = [i];
+      var displaySaved = localStorage.getItem(index)
+      cityList.append("<li><button id='cityBtn'>"+displaySaved+"</button></li>");
+  }
 }
-
+// api call to get current weather
 var getCityWeather = function () {
   var queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -70,6 +82,8 @@ var getCityWeather = function () {
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
+            cityInfo.css("background-color", "#485461")
+            cityInfo.css("background-image", "linear-gradient(315deg, #485461 0%, #28313b 74%)");
           var cityNameVal = data.name;
           var cityTempVal = data.main.temp;
           var cityWindVal = data.wind.speed;
@@ -98,7 +112,7 @@ var getCityWeather = function () {
       alert("Unable to connect to OpenWeather");
     });
 };
-
+// api call to get 5 day forecast
 var getForecast = function () {
   var queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -131,7 +145,7 @@ var getForecast = function () {
               forecastCard
             var forecastArray = data.daily;
             forecastCard.css("background-color", "#090947");forecastCard.css("background-image", "linear-gradient(315deg, #090947 0%, #5a585a 74%)");
-            UVIText.append("<h4>UVI: </h4>");
+            UVIText.append("<h5>UVI: </h5>");
             cityUVIndex.text(data.current.uvi);
              if(parseInt(cityUVIndex.text()) <= 2){
             cityUVIndex.css("background-color","green")

@@ -71,8 +71,6 @@ section{
     color: white;
     padding: 1rem;
     margin: 1rem;
-    border: solid purple;
-    box-shadow: 10px 10px 5px rgb(84, 14, 84)
 }
 
 .form-wrapper{
@@ -88,8 +86,8 @@ section{
 .form-wrapper h2{
     text-align: center;
     color: rgb(252, 252, 252);
-    background-color: #61045F;
-    background-image: linear-gradient(180deg, #61045F  0%, #AA076B  51%,  #61045F 100%);
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
 
 .form-control{
@@ -118,47 +116,53 @@ section{
     background-image: linear-gradient(315deg, #090947 0%, #5a585a 74%);  
   }
 
-  .cityInfo{
-      width: 50%;
+.cityInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10rem;
+
+    width: 50%;
+    text-align: center;
   }
 
 .cityName{
-    font-size: 3rem;
-}
-.cityTemp{
     font-size: 2rem;
 }
-.cityWind{
-    font-size: 2rem;
-}
+.cityTemp,
+.cityWind,
 .cityDescription{
-    font-size: 2rem;
+    font-size: 1.25rem;
 }
 .forecast-div{
     display: flex;
+    margin-right: 2rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .forecast-div h1{
     text-align: left;
     height: 3rem;
     width: 100%;
-    /* border: solid red; */
 }
 .forecastCard{
     height: 22rem;
-    width: 14em;
-    font-size: 1rem;
+    width: 12em;
+    font-size: 1.25rem;
     margin: 0 .5rem 0 .5rem;
     
 }
 .UVIContainer{
     display: inline-flex;
+    justify-content: center;
     width: 100%;
 }
 .cityUVIndex{
     width: 5%;
+    margin-left:.5rem;
     text-align: center;
     color: black;
     font-weight: bold;
@@ -202,6 +206,7 @@ section{
     }
     .cityInfo{
         width: unset;
+        margin-left: unset;
     }
     .cityTemp,
     .cityWind,
@@ -212,7 +217,6 @@ section{
         font-size: 1.5rem;
     }
     .forecastCard{
-        width: 100%;
         margin: 1rem;
     }
     .cityUVIndex{
