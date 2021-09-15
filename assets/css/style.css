@@ -212,11 +212,17 @@ section{
     .cityInfo{
         width: unset;
         margin-left: unset;
+        margin-bottom: 5rem;
     }
     .cityTemp,
     .cityWind,
     .cityDescription{
         font-size: 1rem;
+    }
+    .forecastHeader{
+        right: -3rem;
+        top: 75rem;
+        font-size: 2rem;
     }
     .forecast-div h1{
         font-size: 1.5rem;
