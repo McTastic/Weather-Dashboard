@@ -12,4 +12,4 @@ Here is a simple web application that will tell the user what the weather is in 
 
 ## Demo screenshot
 
-![demo-screenshot](https://github.com/McTastic/Weather-Dashboard/blob/main/assets/images/_F__Class%2520Bootcamp_Homework_Weather-Dashboard_index.html%20(1).png?raw=true)
+![demo-screenshot](https://github.com/McTastic/Weather-Dashboard/blob/main/assets/images/_F__Class%2520Bootcamp_Homework_Weather-Dashboard_index.html_%20(1).png?raw=true)
