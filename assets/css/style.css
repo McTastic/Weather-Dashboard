@@ -145,6 +145,7 @@ section{
 }
 .forecastHeader{
     position: absolute;
+    display: none;
     top: 38rem;
     right: -25rem;
     text-align: left;

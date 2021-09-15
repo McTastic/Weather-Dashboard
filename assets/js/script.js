@@ -36,6 +36,7 @@ submitBtn.on("click", function () {
     UVIText.empty();
     savedCityCount++
     localStorage.setItem("count",savedCityCount);
+    forecastHeader.css("display","unset");
   } else {
     alert("Please enter a city");
   }
@@ -49,6 +50,7 @@ $("body").on("click","#cityBtn", function(){
     cityIcon.empty("img");
     forecastCard.empty();
     UVIText.empty();
+    forecastHeader.css("display","unset");
 });
 // function to save cities as buttons below the search box
 function saveCity(){
