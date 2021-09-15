@@ -26,6 +26,7 @@ li{
 }
 body{
     display: flex;
+    overflow-x:hidden;
     justify-content: flex-end;
     background-color: #7a7adb;
     background: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
@@ -121,8 +122,7 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 10rem;
-
+    margin-left: 19rem;
     width: 50%;
     text-align: center;
   }
@@ -143,8 +143,12 @@ section{
     align-items: center;
     text-align: center;
 }
-.forecast-div h1{
+.forecastHeader{
+    position: absolute;
+    top: 38rem;
+    right: -25rem;
     text-align: left;
+    color: white;
     height: 3rem;
     width: 100%;
 }
@@ -220,6 +224,15 @@ section{
         position: relative;
         left: -1.5rem;
         margin: 1rem 0 1rem;
+    }
+    .date1{
+        font-size: 3rem;
+    }
+    .date2,
+    .date3,
+    .date4,
+    .date5{
+        font-size: 3rem;
     }
     .cityUVIndex{
         width: 20%;

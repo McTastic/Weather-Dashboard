@@ -19,15 +19,13 @@ var Day2 = $("#day2");
 var Day3 = $("#day3");
 var Day4 = $("#day4");
 var Day5 = $("#day5");
-submitBtn = $(".btn");
+var submitBtn = $(".btn");
 var savedCityCount = 0
 
 submitBtn.on("click", function () {
   event.preventDefault();
   city = userInput.val().trim();
   if (city) {
-    forecastHeader.css("display", "block");
-    forecastHeader.text("5-Day Forecast");
     getCityWeather();
     getForecast();
     saveCity();
@@ -60,7 +58,12 @@ function saveCity(){
 }
 
 function init() {
-  var currentCount = localStorage.getItem("count")
+  var currentCount = localStorage.getItem("count");
+ if(currentCount !== null){
+  savedCityCount = currentCount;
+ }else {
+   currentCount = 0
+ };
 //   renders saved cities to page on load 
   for (var i=0; i < currentCount; i++){
       var index = [i];
@@ -142,7 +145,8 @@ var getForecast = function () {
           response.json().then(function (data) {
               forecastCard
             var forecastArray = data.daily;
-            forecastCard.css("background-color", "#090947");forecastCard.css("background-image", "linear-gradient(315deg, #090947 0%, #5a585a 74%)");
+            forecastCard.css("background-color", "#485461")
+            forecastCard.css("background-image", "linear-gradient(315deg, #485461 0%, #28313b 74%)");
             UVIText.append("<h5>UVI: </h5>");
             cityUVIndex.text(data.current.uvi);
              if(parseInt(cityUVIndex.text()) <= 2){
@@ -161,12 +165,14 @@ var getForecast = function () {
                       "@2x.png",
                   });
                 Day1.append(
+                  "<h1 class ='date1'></h1>",
+                  "<div class = 'icon1'></div>" ,
                   "<div class ='maxTemp1'></div>",
                   "<div class ='minTemp1'></div>",
                   "<div class ='wind1'></div>",
-                  "<div class ='humidity1'></div>",
-                  "<div class = 'icon1'></div>" 
+                  "<div class ='humidity1'></div>"
                 );
+                $(".date1").text(moment().add(1,"day").format("MM/DD"));
                 $(".maxTemp1").text("High: " + forecastArray[0].temp.max + "℉");
                 $(".minTemp1").text("Low: " + forecastArray[0].temp.min + "℉");
                 $(".wind1").text("Wind: " + forecastArray[0].wind_speed + "M/hr");
@@ -181,12 +187,14 @@ var getForecast = function () {
                       "@2x.png",
                   });
                 Day2.append(
+                  "<h1 class ='date2'></h1>",
+                  "<div class = 'icon2'></div>",
                   "<div class ='maxTemp2'></div>",
                   "<div class ='minTemp2'></div>",
                   "<div class ='wind2'></div>",
-                  "<div class ='humidity2'></div>",
-                  "<div class = 'icon2'></div>" 
+                  "<div class ='humidity2'></div>"
                 );
+                $(".date2").text(moment().add(2,"days").format("MM/DD"));
                 $(".maxTemp2").text("High: " + forecastArray[1].temp.max + "℉");
                 $(".minTemp2").text("Low: " +forecastArray[1].temp.min + "℉");
                 $(".wind2").text("Wind: " + forecastArray[1].wind_speed + "M/hr");
@@ -201,12 +209,14 @@ var getForecast = function () {
                       "@2x.png",
                   });
                 Day3.append(
+                  "<h1 class ='date3'></h1>",
+                  "<div class = 'icon3'></div>" ,
                   "<div class ='maxTemp3'></div>",
                   "<div class ='minTemp3'></div>",
                   "<div class ='wind3'></div>",
-                  "<div class ='humidity3'></div>",
-                  "<div class = 'icon3'></div>" 
+                  "<div class ='humidity3'></div>"
                 );
+                $(".date3").text(moment().add(3,"days").format("MM/DD"));
                 $(".maxTemp3").text("High: " + forecastArray[2].temp.max + "℉");
                 $(".minTemp3").text("Low: " + forecastArray[2].temp.min + "℉");
                 $(".wind3").text("Wind: " + forecastArray[2].wind_speed + "M/hr");
@@ -221,12 +231,14 @@ var getForecast = function () {
                       "@2x.png",
                   });
                 Day4.append(
+                  "<h1 class ='date4'></h1>",
+                  "<div class = 'icon4'></div>" ,
                   "<div class ='maxTemp4'></div>",
                   "<div class ='minTemp4'></div>",
                   "<div class ='wind4'></div>",
-                  "<div class ='humidity4'></div>",
-                  "<div class = 'icon4'></div>" 
+                  "<div class ='humidity4'></div>"
                 );
+                $(".date4").text(moment().add(4,"days").format("MM/DD"));
                 $(".maxTemp4").text("High: " + forecastArray[3].temp.max + "℉");
                 $(".minTemp4").text("Low: " + forecastArray[3].temp.min + "℉");
                 $(".wind4").text("Wind: " + forecastArray[3].wind_speed + "M/hr");
@@ -241,12 +253,14 @@ var getForecast = function () {
                       "@2x.png",
                   });
                 Day5.append(
+                  "<h1 class ='date5'></h1>",
+                  "<div class = 'icon5'></div>" ,
                   "<div class ='maxTemp5'></div>",
                   "<div class ='minTemp5'></div>",
                   "<div class ='wind5'></div>",
-                  "<div class ='humidity5'></div>",
-                  "<div class = 'icon5'></div>" 
+                  "<div class ='humidity5'></div>"
                 );
+                $(".date5").text(moment().add(5,"days").format("MM/DD"));
                 $(".maxTemp5").text("High: " + forecastArray[4].temp.max + "℉");
                 $(".minTemp5").text("Low: " + forecastArray[4].temp.min + "℉");
                 $(".wind5").text("Wind: " + forecastArray[4].wind_speed + "M/hr");
