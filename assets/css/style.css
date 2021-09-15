@@ -173,10 +173,29 @@ section{
     font-weight: bold;
     font-size: 1.25rem;
 }
-@media screen and (max-width: 1900px) {
-
+@media screen and (max-width: 1980px) {
+    main{
+        width: unset;
+    }
     .form-control{
         width: 20vw;
+    }
+    .cityList{
+        margin-top: 2rem;
+    }
+    .cityInfo{
+        margin-left: 30rem;
+        margin-bottom: 10rem;
+    }
+    .forecastHeader{
+        margin-top: 4rem;
+    }
+    .forecast-div{
+        font-size: 1rem;
+        width: 100vw;
+    }
+    .forecast-div h1{
+        font-size: 2rem
     }
 }
 @media screen and (max-width: 1168px) {
