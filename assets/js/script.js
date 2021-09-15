@@ -128,7 +128,9 @@ var getForecast = function () {
       ).then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
+              forecastCard
             var forecastArray = data.daily;
+            forecastCard.css("background-color", "#090947");forecastCard.css("background-image", "linear-gradient(315deg, #090947 0%, #5a585a 74%)");
             UVIText.append("<h4>UVI: </h4>");
             cityUVIndex.text(data.current.uvi);
              if(parseInt(cityUVIndex.text()) <= 2){
